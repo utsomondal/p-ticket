@@ -106,6 +106,7 @@
         </div>
         <div class="flex justify-center mt-5">
           <button
+            onclick="scrollToSection('buy-ticket')"
             class="btn bg-[#1DD100] border-[#1DD100] text-[#030712] text-base lg:text-xl font-bold"
           >
             Buy Tickets
@@ -193,6 +194,7 @@
       </section>
       <!-- ticket buying section -->
       <section
+        id="buy-ticket"
         class="border-t-2 border-[#1dd100] bg-[#f7f8f8] rounded-3xl mt-10 p-8"
       >
         <div class="space-y-5">
@@ -223,7 +225,7 @@
               >
                 <img src="images/seat-green.png" />
                 <p class="text-inter text-sm text-[#1DD100] font-bold">
-                  <span>40</span> Seats left
+                  <span id="seat-left">40</span> Seats left
                 </p>
               </div>
             </div>
@@ -308,18 +310,18 @@
             <div class="flex justify-between text-inter px-4 pb-4">
               <div class="flex items-center gap-5">
                 <span>A</span>
-                <button id="A1" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="A1" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   A1
                 </button>
-                <button id="A2" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="A2" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   A2
                 </button>
               </div>
               <div class="flex items-center gap-5">
-                <button id="A3" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="A3" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   A3
                 </button>
-                <button id="A4" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="A4" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   A4
                 </button>
               </div>
@@ -327,18 +329,18 @@
             <div class="flex justify-between text-inter px-4 pb-4">
               <div class="flex items-center gap-5">
                 <span>B</span>
-                <button id="B1" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="B1" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   B1
                 </button>
-                <button id="B2" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="B2" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   B2
                 </button>
               </div>
               <div class="flex items-center gap-5">
-                <button id="B3" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="B3" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   B3
                 </button>
-                <button id="B4" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="B4" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   B4
                 </button>
               </div>
@@ -346,18 +348,18 @@
             <div class="flex justify-between text-inter px-4 pb-4">
               <div class="flex items-center gap-5">
                 <span>C</span>
-                <button id="C1" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="C1" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   C1
                 </button>
-                <button id="C2" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="C2" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   C2
                 </button>
               </div>
               <div class="flex items-center gap-5">
-                <button id="C3" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="C3" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   C3
                 </button>
-                <button id="C4" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="C4" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   C4
                 </button>
               </div>
@@ -365,18 +367,18 @@
             <div class="flex justify-between text-inter px-4 pb-4">
               <div class="flex items-center gap-5">
                 <span>D</span>
-                <button id="D1" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="D1" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   D1
                 </button>
-                <button id="D2" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="D2" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   D2
                 </button>
               </div>
               <div class="flex items-center gap-5">
-                <button id="D3" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="D3" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   D3
                 </button>
-                <button id="D4" class="px-10 py-4 bg-[#F7F8F8] rounded-xl">
+                <button id="D4" class="seat px-10 py-4 bg-[#F7F8F8] rounded-xl">
                   D4
                 </button>
               </div>
@@ -390,49 +392,52 @@
             <hr class="border-dotted" />
             <!-- display area -->
             <div class="bg-[#F7F8F8] rounded-xl mt-5 p-7">
-              <table>
+              <table class="text-inter">
                 <thead class="border-b">
                   <th class="p-5">
                     Seat
-                    <span class="text-white bg-[#1DD100] px-2 py-1 rounded-md"
+                    <span
+                      id="selected-seat"
+                      class="text-white bg-[#1DD100] px-2 py-1 rounded-md"
                       >0</span
                     >
                   </th>
                   <th class="p-5">Class</th>
                   <th class="p-5">Price</th>
                 </thead>
-                <tbody class="text-center border-b">
-                  <!-- table data 3 times creation in js -->
-                  <tr>
-                    <td>C4</td>
-                    <td>Business</td>
-                    <td>550</td>
-                  </tr>
-                  <tr>
-                    <td>C4</td>
-                    <td>Business</td>
-                    <td>550</td>
-                  </tr>
-                </tbody>
+                <tbody id="display-seat" class="text-center border-b"></tbody>
                 <tfoot>
                   <tr>
                     <td class="p-5 text-inter font-medium">Total Price</td>
                     <td class="p-5 text-inter font-medium"></td>
                     <td class="p-5 text-inter font-medium">
-                      BDT <span>0</span>
+                      BDT <span id="total-price">0</span>
                     </td>
                   </tr>
                 </tfoot>
               </table>
-              <div class="p-2 bg-white flex justify-between rounded-xl">
+              <div
+                id="coupon-applied"
+                class="hidden p-2 bg-white rounded-xl text-center"
+              >
+                <p class="text-inter">Coupon Successfully Applied</p>
+                <p class="text-inter">
+                  Discount <span id="discount" class="font-bold">0</span> BDT
+                </p>
+              </div>
+              <div
+                id="coupon-area"
+                class="p-2 bg-white flex justify-between rounded-xl"
+              >
                 <input
                   type="text"
                   name=""
-                  id=""
+                  id="coupon-field"
                   placeholder="Have any coupon?"
                   class="p-3 focus:outline-none"
                 />
                 <button
+                  id="coupon"
                   class="btn btn-success bg-[#1DD100] border-none text-white"
                 >
                   Apply
@@ -440,11 +445,11 @@
               </div>
               <div class="text-inter flex justify-between p-4">
                 <h1 class="font-medium">Grand Total</h1>
-                <h2 class="font-medium">BDT <span>0</span></h2>
+                <h2 class="font-medium">BDT <span id="grand-total">0</span></h2>
               </div>
             </div>
             <!-- form -->
-            <form action="#" method="post" class="py-4 space-y-4">
+            <div class="py-4 space-y-4" id="myForm">
               <div class="flex flex-col">
                 <label class="text-inter font-semibold" for="PassengerName"
                   >Passenger Name</label
@@ -455,7 +460,6 @@
                   name=""
                   id="PassengerName"
                   placeholder="Enter your name"
-                  required
                 />
               </div>
               <div class="flex flex-col">
@@ -464,11 +468,10 @@
                 >
                 <input
                   class="p-6 border border-[#0307121A] rounded-xl w-full"
-                  type="text"
+                  type="tel"
                   name=""
                   id="PhoneNumber"
                   placeholder="Enter your phone number"
-                  required
                 />
               </div>
               <div class="flex flex-col">
@@ -487,6 +490,8 @@
               <div>
                 <!-- Open the modal using ID.showModal() method -->
                 <button
+                  disabled
+                  id="modal-btn"
                   class="btn btn-success w-full bg-[#1DD100] text-white border-none"
                   onclick="my_modal_5.showModal()"
                 >
@@ -523,7 +528,7 @@
                   </div>
                 </dialog>
               </div>
-            </form>
+            </div>
             <!-- policy -->
             <div class="flex justify-between">
               <a href="#" class="underline text-[#03071299]"

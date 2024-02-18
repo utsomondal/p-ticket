@@ -22,7 +22,6 @@ PhoneNumber.addEventListener('input', function () {
     if (inputValue.length !== 0) {
         modalBtn.removeAttribute('disabled');
     }
-    console.log(inputValue);
 })
 for (const seat of seats) {
     seat.addEventListener('click', function () {
@@ -110,10 +109,6 @@ function updateSeatLeft(seatLeft) {
 function updateSeatSelected(selectedSeat) {
     const seatSelected = document.getElementById('selected-seat');
     seatSelected.innerText = selectedSeat;
-}
-function setInnerTextByID(id, value) {
-    const element = document.getElementById(id);
-    element.innerText = value;
 }
 function updateTotalPrice(price) {
     let totalPrice = parseFloat(totalPriceElement.innerText);
